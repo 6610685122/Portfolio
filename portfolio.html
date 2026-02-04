@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYS_ADMIN: CHAYAWAT_K</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="h-screen flex flex-col overflow-hidden">
+
+    <header class="h-12 border-b border-[#30363d] flex items-center px-4 justify-between bg-[#161b22] shrink-0">
+        <div class="flex items-center gap-4">
+            <div class="font-bold text-lg text-white tracking-wider">ROOT@CHAYAWAT:~$</div>
+            <div class="hidden md:flex gap-4 text-xs">
+                <span class="text-green-400">● SYSTEM_ONLINE</span>
+                <span>UPTIME: <span id="uptime">00:00:00</span></span>
+                <span>MEM: 2GB / 1024GB</span>
+            </div>
+        </div>
+        <div class="text-xs text-right">
+            <div><span class="text-gray-500">USER:</span> Chayawat Kanjanakaew </div>
+            <div><span class="text-gray-500">CONTACT:</span> Chayawat.ka@gmail.com | 085-672-6473 </div>
+        </div>
+    </header>
+
+    <div class="flex-1 flex overflow-hidden">
+
+        <aside class="w-80 border-r border-[#30363d] flex flex-col bg-[#0d1117] overflow-y-auto shrink-0">
+
+            <div class="p-4 border-b border-[#30363d]">
+                <h3 class="text-[#d2a8ff] font-bold mb-2">> SUMMARY</h3>
+                <p class="text-xs leading-relaxed text-gray-300">
+                    Third-year Computer Engineering student at Thammasat University with a strong passion for Backend
+                    Development and System Infrastructure. Proficient in Java (Spring Boot) and Python (Django), with
+                    hands-on experience in Linux environments and Docker.
+                </p>
+            </div>
+
+            <div class="p-4 border-b border-[#30363d]">
+                <h3 class="text-[#d2a8ff] font-bold mb-2">> EDUCATION</h3>
+                <div class="mb-2">
+                    <div class="text-white font-bold">Thammasat University</div>
+                    <div class="text-xs text-gray-400">B.Eng Computer Engineering</div>
+                    <div class="text-xs text-gray-500">3rd Year Student </div>
+                </div>
+            </div>
+
+            <div class="p-4 border-b border-[#30363d] flex-1">
+                <h3 class="text-[#d2a8ff] font-bold mb-3">> SKILLS</h3>
+
+                <div class="mb-3">
+                    <div class="text-xs text-gray-500 mb-1">LANGUAGES </div>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="tag">Python</span><span class="tag">Java</span>
+                        <span class="tag">C</span><span class="tag">JavaScript</span>
+                        <span class="tag">SQL</span><span class="tag">Assembly</span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="text-xs text-gray-500 mb-1">FRAMEWORKS </div>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="tag">Django</span><span class="tag">Spring Boot</span>
+                        <span class="tag">PyTorch</span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="text-xs text-gray-500 mb-1">INFRA & TOOLS </div>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="tag">Docker</span><span class="tag">Git</span>
+                        <span class="tag">Linux</span><span class="tag">Grafana</span>
+                        <span class="tag">Prometheus</span><span class="tag">Nginx</span>
+                        <span class="tag">NVIDIA H100 Config</span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="text-xs text-gray-500 mb-1">DATABASES </div>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="tag">MySQL</span><span class="tag">MariaDB</span>
+                        <span class="tag">SQLite</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 h-48 flex justify-center items-center border-t border-[#30363d] bg-[#11161d]">
+                <canvas id="skillsChart"></canvas>
+            </div>
+        </aside>
+
+        <main class="flex-1 overflow-y-auto bg-[#0b0e14] p-6">
+
+            <section class="mb-8">
+                <h2 class="text-xl font-bold text-[#58a6ff] mb-4 border-b border-[#30363d] pb-2">> PROJECTS</h2>
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+
+                    <div class="panel p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <strong class="text-[#79c0ff]">TUTalk Web Application</strong>
+                            <span class="tag text-[10px]">Python/Django</span>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-400 space-y-1 pl-1">
+                            <li>Architected full-stack community platform for TU students. </li>
+                            <li>Implemented using Python (Django) and SQLite. </li>
+                        </ul>
+                    </div>
+
+                    <div class="panel p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <strong class="text-[#79c0ff]">Lab Server Monitoring Infrastructure</strong>
+                            <span class="tag text-[10px]">Prometheus/Grafana</span>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-400 space-y-1 pl-1">
+                            <li>Deployed centralized monitoring stack (Prometheus, Grafana). </li>
+                            <li>Visualized real-time metrics (CPU, Memory, I/O) from Node Exporter. </li>
+                            <li>Configured automated alerting rules for high availability.</li>
+                        </ul>
+                    </div>
+
+                    <div class="panel p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <strong class="text-[#79c0ff]">Strava CLI Insight</strong>
+                            <span class="tag text-[10px]">Python/Docker</span>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-400 space-y-1 pl-1">
+                            <li>Built CLI integrating Strava REST API for data analysis. </li>
+                            <li>Deployed via Docker for reproducibility. </li>
+                            <li>Enforced code quality with Type Hinting & Unit Testing. </li>
+                        </ul>
+                    </div>
+
+                    <div class="panel p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <strong class="text-[#79c0ff]">CheapShark Data Pipeline</strong>
+                            <span class="tag text-[10px]">ETL/SQL</span>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-400 space-y-1 pl-1">
+                            <li>Built Python/SQLite ETL pipeline for API data. </li>
+                            <li>Utilized advanced SQL (CTEs, Subqueries) for complex analysis. </li>
+                        </ul>
+                    </div>
+
+                    <div class="panel p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <strong class="text-[#79c0ff]">Thai ASR System</strong>
+                            <span class="tag text-[10px]">Automation</span>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-400 space-y-1 pl-1">
+                            <li>Engineered automation pipeline using yt-dlp and FFmpeg. </li>
+                            <li>Utilized Pandas to structure datasets for Thai ASR models. </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-xl font-bold text-[#d2a8ff] mb-4 border-b border-[#30363d] pb-2">> COMPETITIONS</h2>
+                <div class="panel p-4 border-l-4 border-[#d2a8ff]">
+                    <div class="flex justify-between mb-2">
+                        <strong class="text-white">BIRDCLEF 2025 | Kaggle Competition</strong>
+                        <span class="text-xs text-gray-500">Mar 2025 - June 2025 </span>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-400 space-y-1">
+                        <li>Engineered Deep Learning pipeline for audio classification using EfficientNet & Vision
+                            Transformer (ViT). </li>
+                        <li>Optimized model performance using Cross-Validation techniques. </li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <section>
+                    <h2 class="text-xl font-bold text-[#7ee787] mb-4 border-b border-[#30363d] pb-2">> ACTIVITIES</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="text-[#7ee787] font-bold">Laodinsor Camp 18 (2025)</div>
+                            <div class="text-xs text-gray-500 mb-1">Staff & Python Tutor </div>
+                            <p class="text-gray-400 text-xs">Led basic Python workshops for high school students. </p>
+                        </div>
+                        <div>
+                            <div class="text-[#7ee787] font-bold">TU Engineering Open House</div>
+                            <div class="text-xs text-gray-500 mb-1">Department Representative </div>
+                            <p class="text-gray-400 text-xs">Explained curriculum and career paths to 100+ visitors.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-[#f2cc60] mb-4 border-b border-[#30363d] pb-2">> AWARDS</h2>
+                    <div class="panel p-4 flex items-center gap-3">
+                        <div class="text-3xl">🏆</div>
+                        <div>
+                            <div class="text-[#f2cc60] font-bold">Student Excellence Award 2025</div>
+                            <div class="text-xs text-gray-400">Awarded by Faculty of Engineering for outstanding
+                                dedication to academic activities. </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <br><br><br>
+        </main>
+    </div>
+
+    <div class="h-24 bg-black border-t border-[#30363d] font-mono text-[10px] p-2 overflow-hidden shrink-0 relative">
+        <div class="absolute top-1 right-2 text-gray-600 text-[9px]">TERMINAL_OUTPUT</div>
+        <div id="mini-terminal" class="space-y-1 text-gray-500">
+        </div>
+    </div>
+
+    <script>
+        // --- 1. Small Radar Chart ---
+        const ctx = document.getElementById('skillsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['Backend', 'Infra', 'AI/ML', 'DB', 'Script'],
+                datasets: [{
+                    label: 'Skill',
+                    data: [95, 90, 80, 85, 90],
+                    backgroundColor: 'rgba(88, 166, 255, 0.2)',
+                    borderColor: '#58a6ff',
+                    pointRadius: 2,
+                    borderWidth: 1.5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: '#30363d' },
+                        grid: { color: '#21262d' },
+                        pointLabels: { color: '#8b949e', font: { size: 9 } },
+                        ticks: { display: false, backdropColor: 'transparent' }
+                    }
+                },
+                plugins: { legend: { display: false } }
+            }
+        });
+
+        // --- 2. Uptime Counter ---
+        let seconds = 0;
+        setInterval(() => {
+            seconds++;
+            const h = String(Math.floor(seconds / 3600)).padStart(2, '0');
+            const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+            const s = String(seconds % 60).padStart(2, '0');
+            document.getElementById('uptime').innerText = `${h}:${m}:${s}`;
+        }, 1000);
+
+        // --- 3. Mini Terminal Logs ---
+        const logs = [
+            "System initialized. Profile: Chayawat K.",
+            "Loading projects from /var/www/...",
+            "[INFO] TUTalk loaded successfully (Django/Sqlite).",
+            "[INFO] Strava CLI module active.",
+            "Connecting to NVIDIA H100 server... OK.",
+            "Monitoring agent (Prometheus) is running.",
+            "Fetching BirdClef 2025 dataset...",
+            "User input waiting..."
+        ];
+        const term = document.getElementById('mini-terminal');
+        let i = 0;
+
+        function addLog() {
+            const div = document.createElement('div');
+            div.innerHTML = `<span class="text-green-500">➜</span> ${logs[i % logs.length]}`;
+            term.appendChild(div);
+            if (term.children.length > 5) term.removeChild(term.firstChild);
+            term.scrollTop = term.scrollHeight;
+            i++;
+            setTimeout(addLog, Math.random() * 2000 + 1000);
+        }
+        addLog();
+    </script>
+</body>
+
+</html>

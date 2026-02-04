@@ -1,0 +1,81 @@
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #0b0e14;
+            color: #aab2c0;
+            font-size: 0.85rem;
+        }
+
+        .panel {
+            background: #11161d;
+            border: 1px solid #232830;
+        }
+
+        .panel-header {
+            background: #161b22;
+            border-bottom: 1px solid #232830;
+            padding: 0.5rem 1rem;
+            font-weight: 700;
+            color: #58a6ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tag {
+            background: #1f2937;
+            color: #79c0ff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            border: 1px solid #30363d;
+            font-size: 0.75rem;
+        }
+
+        .section-title {
+            color: #d2a8ff;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 0.25rem;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h1 {
+            color: #f0f6fc;
+        }
+
+        h2 {
+            color: #79c0ff;
+        }
+
+        strong {
+            color: #c9d1d9;
+        }
+
+        /* Scrollbar custom */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0b0e14;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #58a6ff;
+        }
+
+        .blink {
+            animation: blinker 1.5s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
