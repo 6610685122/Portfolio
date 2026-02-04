@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SYS_ADMIN: CHAYAWAT_K</title>
+    <title>CHAYAWAT_KANJANAJAEW</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
@@ -45,8 +45,8 @@
                 <h3 class="text-[#d2a8ff] font-bold mb-2">> EDUCATION</h3>
                 <div class="mb-2">
                     <div class="text-white font-bold">Thammasat University</div>
-                    <div class="text-xs text-gray-400">B.Eng Computer Engineering</div>
-                    <div class="text-xs text-gray-500">3rd Year Student </div>
+                    <div class="text-xs text-gray-400">Bachelor of Engineering in Computer Engineering</div>
+                    <div class="text-xs text-gray-300">3rd Year Student </div>
                 </div>
             </div>
 
@@ -179,15 +179,16 @@
                     <h2 class="text-xl font-bold text-[#7ee787] mb-4 border-b border-[#30363d] pb-2">> ACTIVITIES</h2>
                     <div class="space-y-4">
                         <div>
+                            <div class="panel p-4 flex items-center gap-3">
                             <div class="text-[#7ee787] font-bold">Laodinsor Camp 18 (2025)</div>
                             <div class="text-xs text-gray-500 mb-1">Staff & Python Tutor </div>
-                            <p class="text-gray-400 text-xs">Led basic Python workshops for high school students. </p>
+                            <p class="text-gray-400 text-xs">Led basic Python workshops for high school students. </p></div>
                         </div>
-                        <div>
+                        <div><div class="panel p-4 flex items-center gap-3">
                             <div class="text-[#7ee787] font-bold">TU Engineering Open House</div>
                             <div class="text-xs text-gray-500 mb-1">Department Representative </div>
                             <p class="text-gray-400 text-xs">Explained curriculum and career paths to 100+ visitors.
-                            </p>
+                            </p></div>
                         </div>
                     </div>
                 </section>
@@ -216,37 +217,7 @@
     </div>
 
     <script>
-        // --- 1. Small Radar Chart ---
-        const ctx = document.getElementById('skillsChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'radar',
-            data: {
-                labels: ['Backend', 'Infra', 'AI/ML', 'DB', 'Script'],
-                datasets: [{
-                    label: 'Skill',
-                    data: [95, 90, 80, 85, 90],
-                    backgroundColor: 'rgba(88, 166, 255, 0.2)',
-                    borderColor: '#58a6ff',
-                    pointRadius: 2,
-                    borderWidth: 1.5
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    r: {
-                        angleLines: { color: '#30363d' },
-                        grid: { color: '#21262d' },
-                        pointLabels: { color: '#8b949e', font: { size: 9 } },
-                        ticks: { display: false, backdropColor: 'transparent' }
-                    }
-                },
-                plugins: { legend: { display: false } }
-            }
-        });
-
-        // --- 2. Uptime Counter ---
+        // --- Uptime Counter ---
         let seconds = 0;
         setInterval(() => {
             seconds++;
